@@ -8,25 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/malo/.nuget/packages/": {}
+    "/home/keoagilemotlhale/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/malo/Desktop/sfgticketassignment/sfgticketassignment.csproj",
+      "projectUniqueName": "/home/keoagilemotlhale/Documents/source/sfgticketassignment/sfgticketassignment.csproj",
       "projectName": "sfgticketassignment",
-      "projectPath": "/Users/malo/Desktop/sfgticketassignment/sfgticketassignment.csproj",
-      "packagesPath": "/Users/malo/.nuget/packages/",
-      "outputPath": "/Users/malo/Desktop/sfgticketassignment/obj/",
+      "projectPath": "/home/keoagilemotlhale/Documents/source/sfgticketassignment/sfgticketassignment.csproj",
+      "packagesPath": "/home/keoagilemotlhale/.nuget/packages/",
+      "outputPath": "/home/keoagilemotlhale/Documents/source/sfgticketassignment/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/malo/.nuget/NuGet/NuGet.Config"
+        "/home/keoagilemotlhale/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -39,11 +38,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -61,11 +55,14 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.103/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
