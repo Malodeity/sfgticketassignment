@@ -1,0 +1,41 @@
+{
+  "name": "ticket-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@prisma/client": "5.7.0",
+    "bcrypt": "^5.1.1",
+    "install": "^0.13.0",
+    "next": "14.0.4",
+    "next-auth": "^4.24.5",
+    "npm": "10.2.5",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/next-auth": "^3.15.0",
+    "@types/node": "20.10.4",
+    "@types/react": "18.2.43",
+    "@types/react-dom": "18.2.17",
+    "autoprefixer": "^10.0.1",
+    "eslint": "8.55.0",
+    "eslint-config-next": "14.0.4",
+    "postcss": "8.4.32",
+    "prisma": "5.7.0",
+    "tailwindcss": "3.3.6",
+    "ts-node": "^10.9.2",
+    "typescript": "5.3.3"
+  }
+}

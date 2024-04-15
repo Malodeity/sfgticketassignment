@@ -34,14 +34,17 @@ public class OfficerController : ControllerBase
                     double ticketAmount = 0;
                     switch (createTicketRequest.TicketType)
                     {
-                        case "UnauthorisedParking":
-                            ticketAmount = 300;
+                        case "Unauthorised Parking":
+                            ticketAmount = 747;
                             break;
                         case "Double Parking":
-                            ticketAmount = 150;
+                            ticketAmount = 142;
                             break;
-                        case "Tow - Away Zone Parking":
-                            ticketAmount = 150;
+                        case "Tow Away Zone Parking":
+                            ticketAmount = 284;
+                            break;
+                        case "Over 24 Hours Parking":
+                            ticketAmount = 436;
                             break;
                         default:
                             ticketAmount = 0;

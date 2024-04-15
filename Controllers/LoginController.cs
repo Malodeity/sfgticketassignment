@@ -26,8 +26,14 @@ public class LoginController : ControllerBase
         {
             return BadRequest("Username or Password is required");
         }
+
         //Find the officer in the database
-        var user = dbContext.Officer.FirstOrDefault(u => u.UserName == LoginRequest.Username);
+        dynamic user = dbContext.Officer.FirstOrDefault(u => u.UserName == LoginRequest.Username);
+        if (user == null)
+        {
+            // Find the violator in the database
+            user = dbContext.Violator.FirstOrDefault(u => u.IDNumber == LoginRequest.Username);
+        }
 
         //check if the password matches and the user exist
         if (user == null || user.Password == LoginRequest.Password)
@@ -36,7 +42,7 @@ public class LoginController : ControllerBase
         }
 
 
-        return Ok("Login Successful!");
+        return Ok(user);
     }
 
 }

@@ -1,0 +1,45 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/bin
+
+
+# evironment files
+.appsettings.*.json
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/UI/node_modules
+/UI/.pnp
+/UI/.pnp.js
+/UI/.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+UI/.next
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+/UI/npm-debug.log*
+/UI/yarn-debug.log*
+/UI/yarn-error.log*
+
+# local env files
+/UI/.env*.local
+
+# vercel
+/UI/.vercel
+
+# typescript
+/UI/*.tsbuildinfo
+/UI/next-env.d.ts

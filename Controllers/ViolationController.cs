@@ -16,6 +16,20 @@ public class ViolationController : ControllerBase
         this.dbContext = dbContext;
     }
 
+    [HttpGet("GetOfficerViolations")]
+    public async Task<IActionResult> GetOfficerViolations(Guid id)
+    {
+        var violations = await dbContext.Violation.Include(x => x.IssueOfficer).Where(x => x.IssueOfficer.Id == id).ToListAsync();
+        return Ok(violations);
+    }
+
+    [HttpGet("GetMyViolations")]
+    public async Task<IActionResult> GetMyViolations(string idNumber)
+    {
+        var violations = await dbContext.Violation.Where(x => x.IssuedCar.Violator.IDNumber == idNumber).ToListAsync();
+        return Ok(violations);
+    }
+
     [HttpPost("AddToAnnualTax")]
     public async Task<IActionResult> AddToAnnualTax(AddToAnnualTaxRequest addToAnnualTaxRequest)
     {
