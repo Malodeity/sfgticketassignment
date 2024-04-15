@@ -3,6 +3,8 @@
 # dependencies
 /bin
 /obj
+bin
+obj
 
 
 # evironment files
