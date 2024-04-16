@@ -1,7 +1,8 @@
-import { SignInForm } from "@/app/(components)/SignInForm";
+
 import { Suspense } from "react";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+import { SignInForm } from "../(components)/SignInForm";
 
 const SignInPage = () => {
     const session = getServerSession();
