@@ -1,7 +1,7 @@
 import { faHome, faTicket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getServerSession } from "next-auth";
-import { options } from '@/app/api/auth/[...nextauth]/options';
+import { options } from "../api/auth/[...nextauth]/options";
 import Link from "next/link";
 import { Avatar } from "./Avatar";
 
