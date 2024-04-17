@@ -13,10 +13,10 @@ export const options: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: {
-          label: "email",
+        username: {
+          label: "username",
           type: "text",
-          placeholder: "your-email",
+          placeholder: "your-username",
         },
         password: {
           label: "password",
@@ -27,7 +27,7 @@ export const options: NextAuthOptions = {
       async authorize(credentials) {
         try {
           const response = await login({
-            username: credentials?.email,
+            username: credentials?.username,
             password: credentials?.password,
           });
 
@@ -36,8 +36,10 @@ export const options: NextAuthOptions = {
           }
 
           return response;
-        } catch (error) {}
-        return null;
+          //return await { id: 1, name: "John Doe", email: 'john@doe.com' };
+        } catch (error) {
+          return null;
+        }
       },
     }),
   ],
