@@ -1,9 +1,11 @@
 import CredentialsProvider from "next-auth/providers/credentials";
-import prisma from "@/app/(lib)/prisma";
-import bcrypt from "bcrypt";
 import { NextAuthOptions } from "next-auth";
+import { login } from "../../../(services)/loginService";
 
 export const options: NextAuthOptions = {
+  pages: {
+    signIn: "/sign-in",
+  },
   session: {
     strategy: "jwt",
   },
@@ -22,42 +24,18 @@ export const options: NextAuthOptions = {
           placeholder: "your-password",
         },
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         try {
-          /*const foundUser = await prisma.user.findUniqueOrThrow({
-            where: {
-              email: credentials?.email,
-            },
+          const response = await login({
+            username: credentials?.email,
+            password: credentials?.password,
           });
 
-          if (foundUser) {
-            const match = await bcrypt.compare(
-              credentials.password,
-              foundUser.password
-            );
-            if (match) {
-              delete foundUser.password;
-              return foundUser;
-            }
-          }*/
-          const response = await fetch(
-            `http://localhost:50288/api/login/login`,
-            {
-              method: "POST",
-              headers: {
-                "content-type": "application/json",
-              },
-              body: JSON.stringify(credentials),
-            }
-          );
-
-          console.log("response:" + response);
-
-          if (!response.ok) {
+          if (!response) {
             throw new Error("Invalid credentials");
           }
 
-          return await response.json();
+          return response;
         } catch (error) {}
         return null;
       },
@@ -65,11 +43,13 @@ export const options: NextAuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user }) {
-      if (user) token.role = user.role;
+      if (user) {
+      }
       return token;
     },
     async session({ session, token }) {
-      if (session?.user) session.user.role = token.role;
+      if (session?.user) {
+      }
       return session;
     },
   },
