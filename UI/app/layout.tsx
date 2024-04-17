@@ -5,7 +5,7 @@ import Nav from './(components)/Nav';
 
 import { config } from '@fortawesome/fontawesome-svg-core';
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import AuthProvider from './(providers)/AuthProvider';
+import SessionProvider from './(providers)/SessionProvider';
 import UIProvider from './(providers)/UIProvider';
 
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
+        <SessionProvider>
           <UIProvider>
             <div className='flex flex-col h-screen max-h-screen'>
               <Nav />
@@ -34,7 +34,7 @@ export default function RootLayout({
               </div>
             </div>
           </UIProvider>
-        </AuthProvider>
+        </SessionProvider>
       </body>
     </html>
   )

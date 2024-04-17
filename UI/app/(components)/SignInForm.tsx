@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { useSession } from "../(providers)/SessionProvider";
 
 export const SignInForm = () => {
+    const { signIn } = useSession();
     let startingFormData = {
         username: '',
         password: ''
@@ -24,7 +25,7 @@ export const SignInForm = () => {
 
     const onSubmit = async (e) => {
         try {
-            const response = await signIn('credentials', {
+            const response = /*await signIn('credentials', {
                 username: formData.username,
                 password: formData.password,
                 redirect: true,
@@ -32,7 +33,7 @@ export const SignInForm = () => {
 
             if (!response.ok) {
 
-            }
+            }*/ await signIn({ email: formData.username, password: formData.password });
         }
         catch (e) {
 
